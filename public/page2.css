@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+
+*{
+	box-sizing: border-box;
+	font-family: 'Cinzel', serif;
+	/*margin:2%;
+	padding:0%;
+	width:100vw;
+	height:100vh;*/
+}
+.container{
+	display: grid;
+	grid-template-columns:1fr 1fr 1fr;
+	grid-template-areas:1fr;
+	grid-template-areas:"stry1 stry1 stry1",
+	"stry2 stry2 stry2",
+	"stry3 stry3 stry3";
+	
+}
+.stry1{
+	grid-area: stry1;
+	border: solid #195190FF 5px;
+	border-radius:5px;
+}
+.stry2{
+	grid-area:stry2;
+}
+.stry3{
+	grid-area: stry3;
+} 
+
+.container div{
+	padding:15% 30% 50% 13%;
+	margin:10px;
+}
+.container a{
+	text-decoration: none;
+}
+.container a :hover{
+	pointer:cursor;
+}
+/*#navbar{
+	grid-area: nav;
+
+}*/
+#navbar{
+	width:100%;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding:10px 0px;
+	position:relative;
+	z-index:1;
+	background-color: #603F83FF;
+	color:white;
+	border-radius: 15px;
+}
+#navbar ul{
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	margin-top: 10px;
+}
+.container-1 #navbar ul li{
+	list-style:none;
+}
+#navbar ul li a{
+	padding:10px 18px;
+	border-radius: 5px;
+	font-family: sans-serif;
+	font-size: 16px;
+	text-decoration:none;
+	color:white;
+}
+#navbar ul li a:hover{
+	background-color:#C7D3D4FF;
+	color:#603F83FF;
+	pointer:cursor;
+}
+#navbar h1{
+	font-size:35px;
+	font-weight:500;
+	margin-top:15px;
+	padding-left: 20px;
+}

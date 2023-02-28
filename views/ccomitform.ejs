@@ -1,0 +1,113 @@
+<html>
+<head>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+		*{
+			box-sizing: border-box;
+			margin: 3%;
+			font-family: 'Cinzel', serif;
+			
+		}
+.container{
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1.5fr ;
+	grid-template-areas: "img ct";
+	box-shadow: 3px 3px 10px 5px #000;
+}
+.container div{
+	padding:10px;
+	margin:10px;
+	height:500px;
+}
+.img{
+	grid-area: img;
+	background-color:#94e8ab ;
+
+
+}
+.ct{
+	grid-area:ct;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+input[type=text], input[type=email] {
+  width: 75%;
+  padding: 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  box-sizing: border-box;
+  background-color:#F1F4FFFF ;
+}
+button {
+  background-color:#035fbc;
+  color:white;
+  padding:5px;
+  margin: 5px ;
+  border: solid black 1px;
+  /* width: 30%;
+  height:50%;  */
+  border-radius: 20%;
+  text-decoration: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+  cursor:pointer;
+}
+.img p{
+	font-size: 20px;
+}
+
+.ct1{
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.ct2{
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.ct3{
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+
+}
+
+</style>
+
+</head>
+<body>
+	<div class="container">
+			<div class="img">
+				<img src="popper.gif" width=150px height=150px style="margin:0px 50px 0 125px;"><br>
+				<p style="margin:15px 40px 0 70px;"><b>Congratulations !!!</b><br><p style="margin:15px 40px 0 35px;">on your new commitment.</p><br><br></p>
+				<p style="margin:15px 40px 0 70px; color:#00691d" >Posted Successfully!</p>
+			</div>
+			<div class="ct">
+				<!-- <h1>CONTACT US</h1> -->
+				<div class="ct1">
+
+				 <img src="source.gif" width=150px height=150px >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				 <img src="back.png" width=150px height=150px><br>
+			</div>
+			<div class="ct2">
+			<p style="margin:0 70px 0 80px;">To post another commitment click the below button</p>
+			<p style="margin:0 70px 0 0;">To go back to home page click the below button</p>
+		</div>
+		<div class="ct3">
+		<a href="arform"><button type="submit" class="btn" style="box-shadow: 3px 3px 10px 5px #6E6E6DFF;">Post another Commitment</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="page1ar"><button type="submit" class="btn" style="box-shadow: 3px 3px 10px 5px #6E6E6DFF;">Go Back</button></a>
+		</div>
+				
+		</div>
+		</div>
+</body>
+</html>

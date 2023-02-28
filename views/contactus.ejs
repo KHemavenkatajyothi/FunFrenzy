@@ -1,0 +1,89 @@
+<html>
+<head>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+		*{
+			box-sizing: border-box;
+			margin: 3%;
+			font-family: 'Cinzel', serif;
+			
+		}
+		.container{
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1.5fr ;
+	grid-template-areas: "img ct";
+	box-shadow: 3px 3px 10px 5px #000;
+}
+.container div{
+	padding:10px;
+	margin:10px;
+	height:500px;
+
+}
+.img{
+	grid-area: img;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color:#A2A2A1FF ;
+
+}
+.ct{
+	grid-area:ct;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+input[type=text], input[type=email] {
+  width: 75%;
+  padding: 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  box-sizing: border-box;
+  background-color:#F1F4FFFF ;
+}
+button {
+  background-color:#035fbc;
+  color:white;
+  padding:15px 5px;
+  margin: 8px ;
+  border: none;
+  width: 22%;
+  border-radius: 20%;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+button:hover {
+  opacity: 0.8;
+  cursor:pointer;
+}
+.img p{
+	font-size: 20px;
+}
+
+</style>
+
+</head>
+<body>
+	<form action="/scontact" method="post">
+	<div class="container">
+			<div class="img">
+				<img src="mail.jpg" width=150px height=150px><br>
+				<p>If you have questions or just want to get in touch,use the form below.We look forward to hearing from you!</p>
+			</div>
+			<div class="ct">
+				<h1>CONTACT US</h1>
+				<input type="text" name="nm" class="name" placeholder="Your Name">
+				<input type="email" name="em" class="mail" placeholder="User Email">
+				<textarea class="about" name="about" rows="7" cols="55" autofocus placeholder="Message" style="background-color:#F1F4FFFF"></textarea>
+				<button type="submit" class="btn">Send</button>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+
+*{
+	box-sizing: border-box;
+	font-family: 'Cinzel', serif;
+	/*margin:2%;
+	padding:0%;
+	width:100vw;
+	height:100vh;*/
+}
+.container{
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr ;
+	grid-template-areas: "nav nav" 
+	"stry dance" 
+	"pop stc"
+	" sing TT "
+	"PP pt";
+}
+#navbar ul li a .btn{
+	background-color: #603F83FF;
+    color:white;
+	border: none;
+    font-size: 16px;
+    font-family:'Cinzel', serif;
+}
+.container div{
+	padding:5% 30% 50% 3%;
+	margin:10px;
+}
+.container a{
+	text-decoration: none;
+}
+.container a :hover{
+	cursor:pointer;
+}
+.stry{
+	grid-area: stry;
+	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/ST.jpg");
+	background-repeat:no-repeat;
+	background-position: center;
+	background-size: cover;
+	color:white;
+	text-align:bottom;
+	border: solid #195190FF 5px;
+	border-radius:5px;
+}    
+.dance{
+	grid-area:dance;
+	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/Dancing.jpg");
+	background-repeat:no-repeat;
+	background-position: center;
+	background-size: cover;
+	color:white;
+	border: solid #195190FF 5px;
+	border-radius:5px;
+
+}
+#navbar{
+	grid-area: nav;
+
+}
+#navbar{
+	width:100%;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding:10px 0px;
+	position:relative;
+	z-index:1;
+	background-color: #603F83FF;
+	color:white;
+	border-radius: 15px;
+}
+#navbar ul{
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	margin-top: 10px;
+}
+.container-1 #navbar ul li{
+	list-style:none;
+}
+#navbar ul li a{
+	padding:10px 18px;
+	border-radius: 5px;
+	font-family: 'Cinzel', serif;;
+	font-size: 16px;
+	text-decoration:none;
+	color:white;
+}
+#navbar ul li a:hover{
+	background-color:#C7D3D4FF;
+	color:#603F83FF;
+	cursor:pointer;
+}
+#navbar ul li a .btn:hover{
+	background-color: #C7D3D4FF;
+    color:#603F83FF;;
+	border: none;
+}
+#navbar h1{
+	font-size:35px;
+	font-weight:500;
+	margin-top:15px;
+	padding-left: 20px;
+}
+.pop{
+	grid-area: pop;
+	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/Pop singer.webp");
+	background-repeat:no-repeat;
+	background-position: center;
+	background-size: cover;
+	color:white;
+	border: solid #195190FF 5px;
+	border-radius:5px;
+}
+.stc{
+	grid-area: stc;
+	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/SC.jpg" );
+	background-repeat:no-repeat;
+	background-position: center;
+	background-size: cover;
+	color:white;
+	border: solid #195190FF 5px;
+	border-radius:5px;
+}
+.sing{
+	grid-area: sing;
+	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/singing.jpg");
+	background-repeat:no-repeat;
+	background-position: center;
+	background-size: cover;
+	color:white;
+	border: solid #195190FF 5px;
+	border-radius:5px;
+}
+.TT{
+	grid-area: TT;
+	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/TT.jpg");
+	background-repeat:no-repeat;
+	background-position: center;
+	background-size: cover;
+	color:white;
+	border: solid #195190FF 5px;
+	border-radius:5px;
+}
+.PP{
+	grid-area: PP;
+	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/PS.jpg" );
+	background-repeat:no-repeat;
+	background-position: center;
+	background-size: cover;
+	color:white;
+	border: solid #195190FF 5px;
+	border-radius:5px;
+}
+.pt{
+	grid-area: pt;
+	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/poetry.webp");
+	background-repeat:no-repeat;
+	background-position: center;
+	background-size: cover;
+	color:white;
+	border: solid #195190FF 5px;
+	border-radius:5px;
+}

@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color:white;
+  
+}
+h2{
+  color:black;
+}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color:lightblue;
+  color:black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  width: 22%;
+  border-radius: 20%;
+  text-decoration: none;
+  cursor:pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+  cursor:pointer;
+}
+.box{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.btn{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.box1{
+  background-color: #195190FF;
+}
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: lightblue;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 30%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+/*span{
+  color:black;
+}*/
+.psw a{
+  color:white;
+  text-decoration: none;
+  float: right;
+}
+
+/*span.psw {
+  
+  padding-top: 16px;
+}*/
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}

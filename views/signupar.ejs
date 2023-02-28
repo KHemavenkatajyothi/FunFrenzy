@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="signup.css">
+</head>
+<body>
+  <div class="box">
+
+<h2>SignUp Form</h2>
+
+<form action="/ssignupar" method="post" class="box1">
+  <div class="imgcontainer">
+    <img src="https://th.bing.com/th/id/OIP.5mOC-ugYRmi8qzjtjUl5zQHaHa?w=195&h=196&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Name&nbsp;:&nbsp;&nbsp;&nbsp;</b></label>
+    <input type="text" placeholder="Enter name" name="uname" required><br>
+
+    <label for="mail"><b>E-mail&nbsp;:&nbsp;&nbsp;&nbsp;</b></label>
+    <input type="email" placeholder="Enter e-mail" name="mail" required><br>
+
+    <label for="psw"><b>Password&nbsp;:&nbsp;&nbsp;&nbsp;</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required><br>
+
+    <label for="cpsw"><b>Confirm Password&nbsp;:&nbsp;&nbsp;&nbsp;</b></label>
+    <input type="password" placeholder="Enter Same Password" name="cpsw" required><br><br>
+
+    <label for="rr"><b>Select&nbsp;:&nbsp;&nbsp;&nbsp;</b></label>
+    <select name="rr" class="fun">
+  <option value="storyteller">Story Teller</option>
+  <option value="dancer">DANCERS</option>
+  <option value="popstar">POP-STARS</option>
+  <option value="standupcomedy">STANDUP_COMEDIANS</option>
+  <option value="singer">SINGERS</option>
+  <option value="tedtalk">TED TALKS</option>
+  <option value="puppet">PUPPET-SHOW</option>
+  <option value="poet">POETRY</option>
+</select>
+    <br><br>
+    <label for="pic"><b>Your Picture&nbsp;:&nbsp;&nbsp;&nbsp;</b></label>
+    <input type="text" placeholder="Upload Your picture link" name="pic" required><br>
+    <label for="about"><b>About You:</b></label><br>&nbsp;&nbsp;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea id="about" name="about" rows="4" cols="30" autofocus></textarea>
+
+
+        <div class="btn">
+    <button type="submit">SUBMIT</button><br></div>
+  </div>
+</form>
+</div>
+</body>
+</html>
