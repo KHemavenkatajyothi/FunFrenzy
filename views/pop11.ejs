@@ -11,37 +11,14 @@
             margin:2%;
             padding:0%;
         }
-        .btn2{
-            width: 100%;
-            text-decoration: none;
-            box-shadow: 3px 10px 5px black;
-            border-radius: 7px;
-            border: solid black 3px;
-            cursor:pointer;
-        }
         .art{
-            display:grid;
-            grid-template-columns: 2fr 1fr;
-            grid-template-rows: 1fr;
-            grid-template-areas: "details img";
-            /* border: 4px solid black;
+            border: 4px solid black;
             border-radius: 10px;
-            box-shadow:3px 3px 10px 5px rgb(78, 76, 76); */
+            box-shadow:3px 3px 10px 5px rgb(78, 76, 76);
         }
-        .details{
-            grid-area:details;
-        }
-        .image{
-            grid-area:img;
-        }
-        .image img{
-            border-radius: 50%;
-            box-shadow: 3px 3px 10px 5px #000;
-        }
-        #navbar{
-	grid-area: nav;
-
-        }
+        /* #navbar{
+	    grid-area: nav;
+        } */
         #navbar{
             display:flex;
             justify-content:space-between;
@@ -93,12 +70,21 @@
             margin-top:15px;
             padding-left: 20px;
         }
-        .details h2{
-                font-size: 25px; box-shadow: 3px 3px 10px 5px #000;
-            }
-        .details  h3{
-                font-size: 20px;
-            }
+        #navbar ul li button{
+            background-color: #603F83FF;
+            padding:0px 18px;
+            color:white;
+            border: none;
+            font-size: 16px;
+            background: none;
+            border-radius: 5px;
+            font-family: 'Cinzel', serif;
+        }
+        #navbar ul li button:hover{
+            background-color:#C7D3D4FF;
+            color:#603F83FF;
+            cursor:pointer;
+        }
     </style>
 </head>
 <body>
@@ -109,26 +95,28 @@
                 <li><a href="/page1"><button name="home" type="submit" class="btn">HOME</button></a></li>
                 <li><a href="/contactus"><button name="home" type="submit" class="btn">CONTACT US</button></a></li>
                 <li><a href="/about"><button name="home" type="submit" class="btn">ABOUT US</button></a></li>
+                <li>
+                    <form action="/contactartform" method="post">
+                        <input type="text" value="<%=id3%>" name="rad" style="display:none">
+                        <input type="text" value="<%=id1%>" name="id1" style="display:none">
+                        <input type="text" value="<%=id%>" name="id" style="display:none">
+                        <button>
+                            CONTACT <%=id%>
+                        </button>
+                    </form>
+                </li>
             </ul>
         </nav>
-    <% if(l1.length!=0){%>
-      <% l1.forEach(function(l1){ %>
-        <form action="/dance11" method="post">
-            <input type="text" value="<%=l1.name%>" style="display:none" name="name123">
-        <button type="submit" class="btn2" name="something">
-            <div class="art">
-                <div class="details">
-                    <h2><%=l1.name%></h2>
-                    <h3><%=l1.email%></h3>
+        <% if(l9.length!=0){%>
+            <% l9.forEach(function(l9){ %> 
+                <div class="art">
+                    <div class="details">
+                        <h2>Go!!! Grab a Seat!!! Hurry Up!!!</h2>
+                        <h3><%=l9.date%></h3>
+                        <h3><%=l9.place%></h3>
+                        <!-- <h3><%=l9.link%></h3> -->
+                        <a href="/buyform"><button style="padding:10px;color:white;margin:0%;background-color: rgb(2, 2, 55);border:black 3px solid;border-radius:5px;">BUY NOW</button></a>
+                    </div>
                 </div>
-                <div class="image">
-                    <img src="<%=l1.pic%>" alt="Currently not available " height="100px"  width="100px">
-                </div>
-            </div>
-            </button>
-            </form>
-        <%});%>
-    <%}%>
-</div>
-</body>
-</html>
+            <%});%>
+        <%}%>

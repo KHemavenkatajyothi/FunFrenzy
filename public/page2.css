@@ -37,7 +37,7 @@
 	text-decoration: none;
 }
 .container a :hover{
-	pointer:cursor;
+	cursor: pointer;
 }
 /*#navbar{
 	grid-area: nav;
@@ -75,7 +75,7 @@
 #navbar ul li a:hover{
 	background-color:#C7D3D4FF;
 	color:#603F83FF;
-	pointer:cursor;
+	cursor: pointer;
 }
 #navbar h1{
 	font-size:35px;

@@ -36,11 +36,10 @@
         }
         .image img{
             border-radius: 50%;
-            box-shadow: 3px 3px 10px 5px #000;
+           box-shadow: 3px 3px 10px 5px #000;
         }
         #navbar{
-	grid-area: nav;
-
+	        grid-area: nav;
         }
         #navbar{
             display:flex;
@@ -99,6 +98,7 @@
         .details  h3{
                 font-size: 20px;
             }
+        
     </style>
 </head>
 <body>
@@ -110,23 +110,24 @@
                 <li><a href="/contactus"><button name="home" type="submit" class="btn">CONTACT US</button></a></li>
                 <li><a href="/about"><button name="home" type="submit" class="btn">ABOUT US</button></a></li>
             </ul>
-        </nav>
+    </nav> 
     <% if(l1.length!=0){%>
       <% l1.forEach(function(l1){ %>
-        <form action="/dance11" method="post">
+        <form action="/pop11" method="post">
             <input type="text" value="<%=l1.name%>" style="display:none" name="name123">
         <button type="submit" class="btn2" name="something">
             <div class="art">
                 <div class="details">
                     <h2><%=l1.name%></h2>
                     <h3><%=l1.email%></h3>
+                    <!-- <a href="<%=l1.pic%>"><%=l1.name%></a> -->
                 </div>
                 <div class="image">
-                    <img src="<%=l1.pic%>" alt="Currently not available " height="100px"  width="100px">
+                    <img src="<%=l1.pic%>"  height="100px"  width="100px" />
                 </div>
             </div>
-            </button>
-            </form>
+        </button>
+        </form>
         <%});%>
     <%}%>
 </div>

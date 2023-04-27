@@ -1,24 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
 
 *{
-	box-sizing: border-box;
+	/* box-sizing: border-box; */
 	font-family: 'Cinzel', serif;
-	/*margin:2%;
+	padding: 0%;
+	/* margin:2%;
 	padding:0%;
 	width:100vw;
-	height:100vh;*/
+	height:100vh; */
 }
 .container{
 	display: grid;
-	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-	grid-template-columns: 1fr 1fr ;
-	grid-template-areas: "nav nav" 
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr ;
+	grid-template-areas:
 	"stry dance" 
 	"pop stc"
-	" sing TT "
+	"sing TT "
 	"PP pt";
 }
-.container div{
+/* .container div{
+	padding:5% 30% 50% 3%;
+	margin:10px;
+} */
+.container button{
 	padding:5% 30% 50% 3%;
 	margin:10px;
 }
@@ -28,25 +33,27 @@
 .container a :hover{
 	cursor:pointer;
 }
+.container button:hover{
+	cursor:pointer;
+}
 .stry{
 	grid-area: stry;
-	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/ST.jpg");
+	/* background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/ST.jpg"); */
 	background-repeat:no-repeat;
 	background-position: center;
 	background-size: cover;
-	color:white;
 	text-align:bottom;
-	border: solid #195190FF 5px;
+	/* border: solid #195190FF 5px; */
 	border-radius:5px;
-}    
+	}    
 .dance{
 	grid-area:dance;
-	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/Dancing.jpg");
+	/* background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/Dancing.jpg"); */
 	background-repeat:no-repeat;
 	background-position: center;
 	background-size: cover;
 	color:white;
-	border: solid #195190FF 5px;
+	/* border: solid #195190FF 5px; */
 	border-radius:5px;
 
 }
@@ -59,24 +66,28 @@
 	display:flex;
 	justify-content:space-between;
 	align-items:center;
-	padding:10px 0px;
+	top:0px;
 	position:relative;
 	z-index:1;
+	/* background-color: rgba(148, 78, 223, 0.584); */
 	background-color: #603F83FF;
-	color:white;
+	/* color:black; */
+	color: white;
 	border-radius: 15px;
+	box-shadow: 3px 3px 10px 5px #000;
 }
 #navbar ul{
 	display:flex;
 	justify-content:center;
 	align-items: center;
-	margin-top: 10px;
+	/* margin-top: 10px; */
 }
 .container-1 #navbar ul li{
 	list-style:none;
 }
 #navbar ul li a .btn{
 	background-color: #603F83FF;
+	/* background-color:rgba(148, 78, 223, 0.584); */
     color:white;
 	border: none;
 	font-size: 16px;
@@ -89,7 +100,7 @@
 	text-decoration:none;
 	color:white;
 }
-#navbar ul li a:hover{
+/* #navbar ul li a:hover{
 	background-color:#C7D3D4FF;
 	color:#603F83FF;
 	cursor:pointer;
@@ -98,7 +109,7 @@
 	background-color: #C7D3D4FF;
     color:#603F83FF;;
 	border: none;
-}
+} */
 #navbar h1{
 	font-size:35px;
 	font-weight:500;
@@ -107,61 +118,61 @@
 }
 .pop{
 	grid-area: pop;
-	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/Pop singer.webp");
+	/* background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/Pop singer.webp"); */
 	background-repeat:no-repeat;
 	background-position: center;
 	background-size: cover;
 	color:white;
-	border: solid #195190FF 5px;
+	/* border: solid #195190FF 5px; */
 	border-radius:5px;
 }
 .stc{
 	grid-area: stc;
-	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/SC.jpg" );
+	/* background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/SC.jpg" ); */
 	background-repeat:no-repeat;
 	background-position: center;
 	background-size: cover;
 	color:white;
-	border: solid #195190FF 5px;
+	/* border: solid #195190FF 5px; */
 	border-radius:5px;
 }
 .sing{
 	grid-area: sing;
-	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/singing.jpg");
+	/* background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/singing.jpg"); */
 	background-repeat:no-repeat;
 	background-position: center;
 	background-size: cover;
 	color:white;
-	border: solid #195190FF 5px;
+	/* border: solid #195190FF 5px; */
 	border-radius:5px;
 }
 .TT{
 	grid-area: TT;
-	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/TT.jpg");
+	/* background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/TT.jpg"); */
 	background-repeat:no-repeat;
 	background-position: center;
 	background-size: cover;
 	color:white;
-	border: solid #195190FF 5px;
+	/* border: solid #195190FF 5px; */
 	border-radius:5px;
 }
 .PP{
 	grid-area: PP;
-	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/PS.jpg" );
+	/* background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/PS.jpg" ); */
 	background-repeat:no-repeat;
 	background-position: center;
 	background-size: cover;
 	color:white;
-	border: solid #195190FF 5px;
+	/* border: solid #195190FF 5px; */
 	border-radius:5px;
 }
 .pt{
 	grid-area: pt;
-	background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/poetry.webp");
+	/* background-image:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url("/poetry.webp"); */
 	background-repeat:no-repeat;
 	background-position: center;
 	background-size: cover;
 	color:white;
-	border: solid #195190FF 5px;
+	/* border: solid #195190FF 5px; */
 	border-radius:5px;
 }

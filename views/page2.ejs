@@ -11,14 +11,36 @@
             margin:2%;
             padding:0%;
         }
-        .art{
-            border: 4px solid black;
-            border-radius: 10px;
-            box-shadow:3px 3px 10px 5px rgb(78, 76, 76);
+        .btn2{
+            width: 100%;
+            text-decoration: none;
+            box-shadow: 3px 10px 5px black;
+            border-radius: 7px;
+            border: solid black 3px;
+            cursor:pointer;
         }
-        /* #navbar{
-	    grid-area: nav;
-        } */
+        .art{
+            display:grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: "details img";
+            /* border: 4px solid black;
+            border-radius: 10px;
+            box-shadow:3px 3px 10px 5px rgb(78, 76, 76); */
+        }
+        .details{
+            grid-area:details;
+        }
+        .image{
+            grid-area:img;
+        }
+        .image img{
+           border-radius: 50%;
+           box-shadow: 3px 3px 10px 5px #000;
+        }
+        #navbar{
+	        grid-area: nav;
+        }
         #navbar{
             display:flex;
             justify-content:space-between;
@@ -46,16 +68,6 @@
             font-size: 16px;
             font-family: 'Cinzel', serif;
         }
-        #navbar ul li button{
-            background-color: #603F83FF;
-            padding:0px 18px;
-            color:white;
-            border: none;
-            font-size: 16px;
-            background: none;
-            border-radius: 5px;
-            font-family: 'Cinzel', serif;
-        }
         #navbar ul li a{
             padding:10px 18px;
             border-radius: 5px;
@@ -65,11 +77,6 @@
             color:white;
         }
         #navbar ul li a:hover{
-            background-color:#C7D3D4FF;
-            color:#603F83FF;
-            cursor:pointer;
-        }
-        #navbar ul li button:hover{
             background-color:#C7D3D4FF;
             color:#603F83FF;
             cursor:pointer;
@@ -85,19 +92,19 @@
             margin-top:15px;
             padding-left: 20px;
         }
-        .details button{
-            left:5px;
-        }
-        .details button:hover{
-            cursor: pointer;
-        }
-        /* label {
+        .details h2{
+                font-size: 25px; box-shadow: 3px 3px 10px 5px #000;
+            }
+        .details  h3{
+                font-size: 20px;
+            }
+        label {
             background-color: white;
             display: flex;
             align-items: center;
             gap: 14px;
-            margin:0% 15%;
-            padding: 10px 15px 10px 10px;
+            /* margin:0% 15%; */
+            /* padding: 10px 15px 10px 10px; */
             cursor: pointer;
             user-select: none;
             border-radius: 10px;
@@ -169,7 +176,7 @@
             input:checked + label .action span.option-2 {
             transform: translate(0px,0%);
             opacity: 1;
-            } */
+            }
     </style>
 </head>
 <body>
@@ -177,51 +184,37 @@
         <nav id="navbar">
             <h1>FunFrenzy</h1>
             <ul>
-                <li><a href="/page1"><button name="home" type="submit" class="btn">HOME</button></a></li>
+                <% if(id3=="audience"){ %>
+                    <li><a href="/page1"><button name="home" type="submit" class="btn">HOME</button></a></li>
+                <%}%>
+                <% if(id3=="artist"){ %>
+                    <li><a href="/page1ar"><button name="home" type="submit" class="btn">HOME</button></a></li>
+                <%}%>
                 <li><a href="/contactus"><button name="home" type="submit" class="btn">CONTACT US</button></a></li>
                 <li><a href="/about"><button name="home" type="submit" class="btn">ABOUT US</button></a></li>
-                <li>
-                    <form action="/contactartform" method="post">
-                        <input type="text" value="<%=id3%>" name="rad" style="display:none">
-                        <input type="text" value="<%=id1%>" name="id1" style="display:none">
-                        <input type="text" value="<%=id%>" name="id" style="display:none">
-                        <button>
-                            <!-- CONTACT <%=id%> -->
-                            CONTACT ARTIST
-                        </button>
-                    </form>
-                </li>
             </ul>
-    </nav>
-    <!-- <form action="/favs" method="post">
-        <input type="text" value="<%=id3%>" name="rad" style="display:none">
-		<input type="text" value="<%=id1%>" name="id1" style="display:none">
-        <input type="text" value="<%=id%>" name="id" style="display:none">
-        <button>
-            Add To Favorites
-        </button>
-    </form> -->
-    <!-- <input type="checkbox" checked="checked" id="favorite" name="favorite-checkbox" value="favorite-button">
-        <label for="favorite" class="container">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-        <div class="action">
-            <span class="option-1">Add to Favorites</span>
-            <span class="option-2">Added to Favorites</span>
-        </div>
-        </label> -->
-    <% if(l9.length!=0){%>
-        <% l9.forEach(function(l9){ %> 
-            <div class="art">
-                <div class="details">
-                    <h2>Go!!! Grab a Seat!!! Hurry Up!!!</h2>
-                    <!-- <h2><%=(l9.title)%></h2> -->
-                    <h3><%=l9.date%></h3>
-                    <h3><%=l9.place%></h3>
-                    <!-- <h3><%=l9.link%></h3> -->
-                    <a href="/buyform"><button style="padding:10px;color:white;margin:0%;background-color: rgb(2, 2, 55);border:black 3px solid;border-radius:5px;">BUY NOW</button></a>
-                </div>
-            </div>
-        <%});%>
-    <%}%>
-</body>
-</html>
+    </nav> 
+    <% if(l1.length!=0){%>
+        <% l1.forEach(function(l1){%>
+          <form action="/stry11" method="post">
+              <input type="text" value="<%=l1.name%>" style="display:none" name="name123">
+              <input type="text" value="<%=id1%>" style="display:none" name="id1">
+              <input type="text" value="<%=id3%>" style="display:none" name="rad">
+          <button type="submit" class="btn2" name="something">
+              <div class="art">
+                  <div class="details">
+                      <h2><%=l1.name%></h2>
+                      <h3><%=l1.email%></h3>
+                      <!-- <a href="<%=l1.pic%>"><%=l1.name%></a> -->
+                  </div>
+                  <div class="image">
+                      <img src="<%=l1.pic%>"  height="100px"  width="100px" />
+                  </div>
+            </button>
+              </div>
+          </form>
+          <%});%>
+      <%}%>
+  </div>
+  </body>
+  </html>

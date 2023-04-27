@@ -15,7 +15,6 @@ body {
     border: 1px solid #ccc;
     box-sizing: border-box;
   }
-  
   button {
     background-color:lightblue;
     color:black;
@@ -54,9 +53,9 @@ body {
     /* align-items:center; */
     justify-content: center;
     padding: 15px;
-    padding-top: 25px;
+    padding-top: 30px;
     width:60vw;
-    height:60vh;
+    height:80vh;
     color: white;
     border: solid rgb(1, 61, 114) 5px;
     box-shadow: aliceblue;

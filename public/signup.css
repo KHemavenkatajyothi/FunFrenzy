@@ -25,12 +25,12 @@ button {
   border: none;
   width: 22%;
   border-radius: 20%;
-  cursor:pointer;
+  /* cursor:pointer; */
 }
 
 button:hover {
   opacity: 0.8;
-cursor:pointer;
+  cursor:pointer;
 }
 .box{
   display:flex;
