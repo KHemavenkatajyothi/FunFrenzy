@@ -2,31 +2,10 @@ var express = require('express');
 var router = express.Router();
 const ejs=require('ejs');
 
-// var mongojs = require('mongojs')
-// var cString=""
-// var db = mongojs(cString, [])
-
-// router.use(
-//     express.urlencoded({
-//       extended: true
-//     })
-// )
 var mongojs = require('mongojs')
 var cString="mongodb+srv://Hema:Hema@cluster0.r5stcec.mongodb.net/FunFrenzy?retryWrites=true&w=majority";
 var db = mongojs(cString, ['StoryTellers'])
-// var user ={
-//     name:"Meher",
-//     email:"meherspr@gmail.com",
-//     mobile:"9849687852",
-// }
-// db.StoryTellers.insert(user,function(err,docs){
-//     if(err){
-//         console.log(err)
-//     }
-//     else{
-//         console.log(docs)
-//     }
-// })
+
 
 router.post('/ssignupar',function(req,res){
     id1=req.body.uname;
@@ -56,8 +35,6 @@ router.post('/ssignup',function(req,res){
         email:req.body.mail1,
         password:req.body.psw1,
     }
-    // console.log(user1)
-    // res.send("hello");
     db.audience.insert(user1,function(err,docs){
             if(err){
                 console.log(err)
@@ -68,26 +45,6 @@ router.post('/ssignup',function(req,res){
             }
         })
     })
-router.post('/ccomitform',function(req,res){
-    id1=req.body.uname;
-    var data={
-        name:req.body.uname2,
-        date:req.body.date2,
-        place:req.body.place2,
-        link:req.body.link2,
-        title:req.body.title,
-    }
-    console.log(data)
-    db.commitments.insert(data,function(err,docs){
-            if(err){
-                console.log(err)
-            }
-            else{
-                console.log(docs)
-                res.render("ccomitform");
-            }
-        })
-})
 
 router.post('/page1',function(req,res){
     id1=req.body.luname;
@@ -117,21 +74,7 @@ router.post('/page1',function(req,res){
         })
     }
 })
-router.get('/buyform',(req,res,next)=>{
-    res.render('buyform');
-})
-router.get('/sbuyform',(req,res,next)=>{
-    res.render('sbuyform');
-})
-// router.get('/stryar1',function(req,res){
-//     var test1=db.commitments;
-//     let promiseOfFind = test1.find({select:""}).toArray((err, docs1) => {
-//         if(docs1.length!=0){
-//             console.log(docs1);
-//             res.render("stryar1",{l1:docs1});
-//         }
-//     })
-// })
+
 // router.get('/stry1',function(req,res){
 //     var test1=db.select;
 //     let promiseOfFind = test1.find({select:"storyteller"}).toArray((err, docs1) => {
@@ -177,14 +120,30 @@ router.get('/sbuyform',(req,res,next)=>{
 //         }
 //     })
 // })
-// router.post('/page2',async function(req,res){
-//     console.log(id1);
-//     var value=req.body.val
+// router.get('/PP',function(req,res){
 //     var test1=db.select;
-//     let promiseOfFind = test1.find({select:value}).toArray((err, docs1) => {
+//     let promiseOfFind = test1.find({select:"puppet"}).toArray((err, docs1) => {
 //         if(docs1.length!=0){
 //             console.log(docs1);
-//             res.render("page2",{l1:docs1});
+//             res.render("PP",{l1:docs1});
+//         }
+//     })
+// })
+// router.get('/TT',function(req,res){
+//     var test1=db.select;
+//     let promiseOfFind = test1.find({select:"tedtalk"}).toArray((err, docs1) => {
+//         if(docs1.length!=0){
+//             console.log(docs1);
+//             res.render("TT",{l1:docs1});
+//         }
+//     })
+// })
+// router.get('/pt',function(req,res){
+//     var test1=db.select;
+//     let promiseOfFind = test1.find({select:"poet"}).toArray((err, docs1) => {
+//         if(docs1.length!=0){
+//             console.log(docs1);
+//             res.render("pt",{l1:docs1});
 //         }
 //     })
 // })
@@ -197,11 +156,11 @@ router.post('/page2',async function(req,res){
     let promiseOfFind = test1.find({select:value}).toArray((err, docs1) => {
         if(docs1.length!=0){
             console.log(docs1);
-            res.render("page2",{l1:docs1,id3:id3,id1:id1});
+            res.render("page2",{l1:docs1,id3:id3,id1:id1,selecttype:value});
         }
     })
 })
-router.post('/stry11',async function(req,res){
+router.post('/page3',async function(req,res){
     var id=req.body.name123;
     var test1=db.commitments;
     var id1=req.body.id1;
@@ -209,102 +168,113 @@ router.post('/stry11',async function(req,res){
     let promiseOfFind = test1.find({name:id}).toArray((err, docs1) => {
         if(docs1.length!=0){
             console.log(docs1);
-            res.render("stry11",{l9:docs1,id1:id1,id3:id3,id:id});
+            res.render("page3",{l9:docs1,id1:id1,id3:id3,id:id});
         }
     })
 })
-router.post('/sing11',async function(req,res){
-    var id=req.body.name123;
-    var test1=db.commitments;
-    var id1=req.body.id1;
-    var id3=req.body.rad;
-    let promiseOfFind = test1.find({name:id}).toArray((err, docs1) => {
-        if(docs1.length!=0){
-            console.log(docs1);
-            res.render("sing11",{l9:docs1,id1:id1,id3:id3,id:id});
-        }
-    })
-})
-router.post('/PP11',async function(req,res){
-    var id=req.body.name123;
-    var test1=db.commitments;
-    var id1=req.body.id1;
-    var id3=req.body.rad;
-    let promiseOfFind = test1.find({name:id}).toArray((err, docs1) => {
-        if(docs1.length!=0){
-            console.log(docs1);
-            res.render("PP11",{l9:docs1,id1:id1,id3:id3,id:id});
-        }
-    })
-})
-router.post('/TT11',async function(req,res){
-    var id=req.body.name123;
-    var test1=db.commitments;
-    var id1=req.body.id1;
-    var id3=req.body.rad;
-    let promiseOfFind = test1.find({name:id}).toArray((err, docs1) => {
-        if(docs1.length!=0){
-            console.log(docs1);
-            res.render("TT11",{l9:docs1,id1:id1,id3:id3,id:id});
-        }
-    })
-})
-router.post('/dance11',async function(req,res){
-    var id=req.body.name123;
-    var test1=db.commitments;
-    var id1=req.body.id1;
-    var id3=req.body.rad;
-    let promiseOfFind = test1.find({name:id}).toArray((err, docs1) => {
-        if(docs1.length!=0){
-            console.log(docs1);
-            res.render("dance11",{l9:docs1,id1:id1,id3:id3,id:id});
-        }
-    })
-})
-router.post('/pop11',async function(req,res){
-    var id=req.body.name123;
-    var test1=db.commitments;
-    var id1=req.body.id1;
-    var id3=req.body.rad;
-    let promiseOfFind = test1.find({name:id}).toArray((err, docs1) => {
-        if(docs1.length!=0){
-            console.log(docs1);
-            res.render("pop11",{l9:docs1,id1:id1,id3:id3,id:id});
-        }
-    })
-})
-router.post('/stc11',async function(req,res){
-    var id=req.body.name123;
-    var test1=db.commitments;
-    var id1=req.body.id1;
-    var id3=req.body.rad;
-    let promiseOfFind = test1.find({name:id}).toArray((err, docs1) => {
-        if(docs1.length!=0){
-            console.log(docs1);
-            res.render("stc11",{l9:docs1,id1:id1,id3:id3,id:id});
-        }
-    })
-})
-router.post('/pt11',async function(req,res){
-    var id=req.body.name123;
-    var test1=db.commitments;
-    var id1=req.body.id1;
-    var id3=req.body.rad;
-    let promiseOfFind = test1.find({name:id}).toArray((err, docs1) => {
-        if(docs1.length!=0){
-            console.log(docs1);
-            res.render("pt11",{l9:docs1,id1:id1,id3:id3,id:id});
-        }
-    })
-})
-router.get('/TT',function(req,res){
-    var test1=db.select;
-    let promiseOfFind = test1.find({select:"tedtalk"}).toArray((err, docs1) => {
-        if(docs1.length!=0){
-            console.log(docs1);
-            res.render("TT",{l1:docs1});
-        }
-    })
+// router.post('/sing11',async function(req,res){
+//     var id=req.body.name123;
+//     var test1=db.commitments;
+//     var id1=req.body.id1;
+//     var id3=req.body.rad;
+//     let promiseOfFind = test1.find({name:id}).toArray((err, docs1) => {
+//         if(docs1.length!=0){
+//             console.log(docs1);
+//             res.render("sing11",{l9:docs1,id1:id1,id3:id3,id:id});
+//         }
+//     })
+// })
+// router.post('/PP11',async function(req,res){
+//     var id=req.body.name123;
+//     var test1=db.commitments;
+//     var id1=req.body.id1;
+//     var id3=req.body.rad;
+//     let promiseOfFind = test1.find({name:id}).toArray((err, docs1) => {
+//         if(docs1.length!=0){
+//             console.log(docs1);
+//             res.render("PP11",{l9:docs1,id1:id1,id3:id3,id:id});
+//         }
+//     })
+// })
+// router.post('/TT11',async function(req,res){
+//     var id=req.body.name123;
+//     var test1=db.commitments;
+//     var id1=req.body.id1;
+//     var id3=req.body.rad;
+//     let promiseOfFind = test1.find({name:id}).toArray((err, docs1) => {
+//         if(docs1.length!=0){
+//             console.log(docs1);
+//             res.render("TT11",{l9:docs1,id1:id1,id3:id3,id:id});
+//         }
+//     })
+// })
+// router.post('/dance11',async function(req,res){
+//     var id=req.body.name123;
+//     var test1=db.commitments;
+//     var id1=req.body.id1;
+//     var id3=req.body.rad;
+//     let promiseOfFind = test1.find({name:id}).toArray((err, docs1) => {
+//         if(docs1.length!=0){
+//             console.log(docs1);
+//             res.render("dance11",{l9:docs1,id1:id1,id3:id3,id:id});
+//         }
+//     })
+// })
+// router.post('/pop11',async function(req,res){
+//     var id=req.body.name123;
+//     var test1=db.commitments;
+//     var id1=req.body.id1;
+//     var id3=req.body.rad;
+//     let promiseOfFind = test1.find({name:id}).toArray((err, docs1) => {
+//         if(docs1.length!=0){
+//             console.log(docs1);
+//             res.render("pop11",{l9:docs1,id1:id1,id3:id3,id:id});
+//         }
+//     })
+// })
+// router.post('/stc11',async function(req,res){
+//     var id=req.body.name123;
+//     var test1=db.commitments;
+//     var id1=req.body.id1;
+//     var id3=req.body.rad;
+//     let promiseOfFind = test1.find({name:id}).toArray((err, docs1) => {
+//         if(docs1.length!=0){
+//             console.log(docs1);
+//             res.render("stc11",{l9:docs1,id1:id1,id3:id3,id:id});
+//         }
+//     })
+// })
+// router.post('/pt11',async function(req,res){
+//     var id=req.body.name123;
+//     var test1=db.commitments;
+//     var id1=req.body.id1;
+//     var id3=req.body.rad;
+//     let promiseOfFind = test1.find({name:id}).toArray((err, docs1) => {
+//         if(docs1.length!=0){
+//             console.log(docs1);
+//             res.render("pt11",{l9:docs1,id1:id1,id3:id3,id:id});
+//         }
+//     })
+// })
+router.post('/ccomitform',function(req,res){
+    id1=req.body.uname;
+    var data={
+        name:req.body.uname2,
+        date:req.body.date2,
+        place:req.body.place2,
+        link:req.body.link2,
+        title:req.body.title,
+    }
+    console.log(data)
+    db.commitments.insert(data,function(err,docs){
+            if(err){
+                console.log(err)
+            }
+            else{
+                console.log(docs)
+                res.render("ccomitform");
+            }
+        })
 })
 router.post('/favs',function(req,res){
     // console.log(req.body.id1);
@@ -329,24 +299,6 @@ router.post('/favs',function(req,res){
         }
     })
 })
-// router.get('/PP',function(req,res){
-//     var test1=db.select;
-//     let promiseOfFind = test1.find({select:"puppet"}).toArray((err, docs1) => {
-//         if(docs1.length!=0){
-//             console.log(docs1);
-//             res.render("PP",{l1:docs1});
-//         }
-//     })
-// })
-// router.get('/pt',function(req,res){
-//     var test1=db.select;
-//     let promiseOfFind = test1.find({select:"poet"}).toArray((err, docs1) => {
-//         if(docs1.length!=0){
-//             console.log(docs1);
-//             res.render("pt",{l1:docs1});
-//         }
-//     })
-// })
 router.post('/favorites',function(req,res){
     var id1=req.body.id1;
     var favo=db.favorites;
@@ -403,7 +355,12 @@ router.get('/page1ar',(req,res,next)=>{
 router.get('/favorites',(req,res,next)=>{
     res.render('favorites');
 })
-
+router.get('/buyform',(req,res,next)=>{
+    res.render('buyform');
+})
+router.get('/sbuyform',(req,res,next)=>{
+    res.render('sbuyform');
+})
 router.get('/arform',(req,res,next)=>{
     res.render('arform');
 })

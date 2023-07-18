@@ -196,9 +196,10 @@
     </nav> 
     <% if(l1.length!=0){%>
         <% l1.forEach(function(l1){%>
-          <form action="/stry11" method="post">
+          <form action="/page3" method="post">
               <input type="text" value="<%=l1.name%>" style="display:none" name="name123">
               <input type="text" value="<%=id1%>" style="display:none" name="id1">
+              <!-- <input type="text" value="<%selecttype%>" style="display:none" name="selecttype"> -->
               <input type="text" value="<%=id3%>" style="display:none" name="rad">
           <button type="submit" class="btn2" name="something">
               <div class="art">
@@ -211,7 +212,6 @@
                       <img src="<%=l1.pic%>"  height="100px"  width="100px" />
                   </div>
             </button>
-              </div>
           </form>
           <%});%>
       <%}%>
